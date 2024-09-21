@@ -1,0 +1,230 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9f0e5;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: white;
+}
+
+.login-section {
+    padding: 40px;
+    background-color: white;
+    border-radius: 25px 0 0 25px;
+}
+
+.image-section {
+    display: none; 
+    border-radius: 20%;
+    margin-left: 40px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: #5cba47;
+}
+
+.show-password {
+    position: absolute;
+    right: 10px; /* Extreme right inside the input */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Proper centering */
+    cursor: pointer;
+    color: #5cba47;
+    font-size: 0.9rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.remember-me input {
+    margin-right: 5px; /* Small gap between the checkbox and the label */
+    cursor: pointer;
+}
+
+.remember-me label {
+    margin-left: 0; /* Remove unnecessary space */
+    font-size: 0.9rem; /* Ensure font-size is in line with other elements */
+}
+
+/* Reset the text-align */
+.remember-me {
+    text-align: left;
+}
+
+button.login-btn {
+    width: 100%;
+    background-color: #5cba47;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+button.login-btn:hover {
+    background-color: #489b37;
+}
+
+.forgot-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.forgot-links a {
+    color: #5cba47;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.forgot-links a:hover {
+    text-decoration: underline;
+}
+
+.enroll-text {
+    margin-top: 20px;
+    font-size: 1rem;
+    position: relative;
+    display: inline-block;
+}
+.enroll-btn {
+    background-color: transparent;
+    color: #5cba47;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.enroll-tooltip {
+    display: none;
+    position: absolute;
+    top: 150%; /* Adjust position to align with button */
+    left: 0;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    font-size: 0.9rem;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.enroll-tooltip::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
+}
+
+.enroll-text:hover .enroll-tooltip {
+    display: block;
+}
+
+.enroll-tooltip ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.enroll-tooltip ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.enroll-tooltip ul li::before {
+    content: '✔';
+    color: #5cba47;
+    margin-right: 10px;
+}
+
+.enroll-tooltip p {
+    margin-bottom: 100px;
+    font-weight: bold;
+}
+
+/* Mobile responsive layout */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .image-section {
+        display: none; /* Hidden on mobile */
+    }
+
+    .login-section {
+        border-radius: 25px;
+    }
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+    .card {
+        flex-direction: row;
+    }
+
+    .image-section {
+        display: block;
+        width: 50%;
+    }
+
+    .image-section img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0 25px 25px 0;
+    }
+}
